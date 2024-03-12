@@ -1,0 +1,32 @@
+{
+  "name": "spudify-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon --env-file=.env ./bin/www",
+    "prod": "node --env-file=.env ./bin/www"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.7.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "http-errors": "~1.6.3",
+    "http-proxy-middleware": "^2.0.6",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
+    "music-metadata": "^7.14.0",
+    "nodemon": "^3.0.2",
+    "stream": "^0.0.2",
+    "uuid": "^9.0.1",
+    "youtube-dl-exec": "^2.5.3",
+    "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "prisma": "^5.7.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

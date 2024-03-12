@@ -1,0 +1,33 @@
+{
+  "name": "spudify",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "clsx": "^2.0.0",
+    "music-metadata-browser": "^2.5.10",
+    "next": "14.0.4",
+    "next-auth": "^4.24.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.12.0",
+    "ytmusic-api": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-slider": "^1.3.6",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}

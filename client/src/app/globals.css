@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,body{
+  height: 100%;
+}
+
+body {
+  color: white;
+  background-color: #010100;
+}
+
+.mainLayout {
+  grid-template-columns: 420px auto;
+  grid-template-rows: 1fr auto;
+}
+
+.customSlider-track{
+  top: 5px;
+  height:5px;
+  background: rgb(155, 155, 155);
+  border-radius: 999px;
+  outline: none;
+  
+}
+
+
+.volumeContainer:hover .customSlider-track.customSlider-track-0{
+  background: rgb(13, 230, 6);
+}
+
+.customSlider{
+  width:100%;
+}
+
+.customSlider-track.customSlider-track-0 {
+  /* color of the track before the thumb */
+  background: white;
+  outline: none;
+}
+
+.volumeContainer:hover .customSlider-thumb{
+  cursor: pointer;
+  outline: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 100%;
+}

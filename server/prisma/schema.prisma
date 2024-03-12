@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  POTATO
+  ADMIN
+}
+
+enum Status {
+  ACTIVE
+  DEACTIVE
+}
+
+model user {
+  id            String       @id @default(uuid())
+  userName      String       @unique
+  email         String       @unique
+  fullName      String
+  regDate       DateTime     @default(now())
+  lastLoginDate DateTime     @updatedAt
+  status        Status       @default(ACTIVE)
+  role          Role         @default(POTATO)
+  song          song[]
+  likedSongs    likedSongs[]
+}
+
+model song {
+  songID     String       @id @default(uuid())
+  title      String
+  album      String?
+  artist     String
+  genre      String?
+  audioURL   String
+  duration   Decimal
+  track      Int?
+  imagePath  String?
+  userID     String?
+  ownedBy    user?        @relation(fields: [userID], references: [id], onDelete: Cascade)
+  likedSongs likedSongs[]
+}
+
+model likedSongs {
+  songID    String
+  songBy    song     @relation(fields: [songID], references: [songID], onDelete: Cascade)
+  userID    String
+  userBy    user     @relation(fields: [userID], references: [id], onDelete: Cascade)
+  dateAdded DateTime @default(now())
+
+  @@id([songID, userID])
+}
