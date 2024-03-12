@@ -1,2 +1,0 @@
-# Spudify
-### A Spotify Clone
